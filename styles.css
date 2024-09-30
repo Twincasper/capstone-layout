@@ -85,3 +85,19 @@ p, h1, h2, h3, h4, h5, h6 {
               rgba(142, 110, 184, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+/* Navbar */
+
+.navbar {
+  background-color: #E8DAF7; /* light grey */
+  box-shadow: 0 2px 4px #dac1f6;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
