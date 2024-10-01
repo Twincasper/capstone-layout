@@ -52,8 +52,35 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* General resets and styling remain the same */
+
+/* Navbar */
+.navbar {
+  background-color: #E8DAF7;
+  box-shadow: 0 2px 4px #dac1f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 10px;
+}
+
+/* Logo with left margin */
+.logo {
+  margin-left: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Centering nav buttons */
+.nav-buttons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-grow: 1;
+}
+
 .nav-buttons button {
-  background-color: #E8DAF7; /* pastel purple */
+  background-color: #E8DAF7;
   border-radius: 100px;
   box-shadow: rgba(142, 110, 184, 0.2) 0 -25px 18px -14px inset,
               rgba(142, 110, 184, 0.15) 0 1px 2px,
@@ -61,7 +88,7 @@ p, h1, h2, h3, h4, h5, h6 {
               rgba(142, 110, 184, 0.15) 0 4px 8px,
               rgba(142, 110, 184, 0.15) 0 8px 16px,
               rgba(142, 110, 184, 0.15) 0 16px 32px;
-  color: #442B6D; /* darker shade of purple */
+  color: #442B6D;
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
@@ -86,18 +113,76 @@ p, h1, h2, h3, h4, h5, h6 {
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* Navbar */
-
-.navbar {
-  background-color: #E8DAF7; /* light grey */
-  box-shadow: 0 2px 4px #dac1f6;
+/* Avatar with margin-right to balance the logo */
+.avatar {
   display: flex;
-  justify-content: space-between;
+  gap: 0.625rem;
+  margin-right: 1.25rem;
+  position: relative;
+}
+
+.avatar i {
+  font-size: 1.5rem;
+}
+
+.dark-mode {
+  position: absolute;
+  top: 2.8rem;
+  right: 1.6rem;
+}
+
+.dark-mode i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Full-page grid layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "leftSide body rightSide";
+  gap: 10px;
+  height: 100vh;
+}
+
+/* Sidebar Left */
+.leftSide {
+  grid-area: leftSide;
+  background-color: #f0f0f0;
   padding: 10px;
+  height: 100%;
+  overflow-y: auto;
 }
 
-.nav-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+/* Main Content Area */
+.body {
+  grid-area: body;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto;
 }
+
+/* Sidebar Right */
+.rightSide {
+  grid-area: rightSide;
+  background-color: #f0f0f0;
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Footer (remains at the bottom if included) */
+.footer {
+  background-color: #E8DAF7;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px #dac1f6;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
