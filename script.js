@@ -29,12 +29,44 @@ document.getElementById('savePost').addEventListener('click', function() {
 
     document.getElementById('postsContainer').appendChild(newCard);
 
-    // Clear the form
     document.getElementById('postTitle').value = '';
     document.getElementById('editor').textContent = '';
 
-    // Close the modal
     const postModal = new bootstrap.Modal(document.getElementById('postModal'));
     postModal.hide();
   }
 });
+
+let search = document.querySelector('.input-group > input');
+function searchPosts() {
+  let searchInput = search.value.toLowerCase();
+  const posts = document.querySelectorAll('.card');
+
+  posts.forEach(post => {
+    if (post.textContent.toLowerCase().includes(searchInput)) {
+      post.style.display = '';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+document.querySelector('.input-group > input').addEventListener('keyup', searchPosts);
+
+
+// document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
+//   const body = document.querySelector('section.layout');
+//   const toggleIcon = this.querySelector('i');
+
+//   body.classList.toggle('dark-mode');
+
+//   if (body.classList.contains('dark-mode')) {
+//     toggleIcon.classList.remove('fa-toggle-off');
+//     toggleIcon.classList.add('fa-toggle-on');
+//     document.documentElement.setAttribute('data-bs-theme', 'dark');
+//   } else {
+//     toggleIcon.classList.remove('fa-toggle-on');
+//     toggleIcon.classList.add('fa-toggle-off');
+//     document.documentElement.removeAttribute('data-bs-theme');
+//   }
+// });
