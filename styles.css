@@ -67,6 +67,20 @@ h6 {
   isolation: isolate;
 }
 
+:root {
+  --quill-bg: #ffffff;
+  --quill-text: #444;
+  --quill-border: #ccc;
+  --quill-toolbar-bg: #ffffff;
+}
+
+[data-bs-theme='dark'] {
+  --quill-bg: #212529;
+  --quill-text: #ffffff;
+  --quill-border: #6c757d;
+  --quill-toolbar-bg: #343a40;
+}
+
 /* General resets and styling remain the same */
 
 /* Navbar */
@@ -228,6 +242,89 @@ main {
 .nav-flush .nav-link {
   border-radius: 0;
 }
+
+/* Adjustments for quill bot dark mode */
+
+[data-bs-theme='dark'] .modal-content {
+  color: white;
+  background-color: #212529;
+}
+
+[data-bs-theme='dark'] .modal-header,
+[data-bs-theme='dark'] .modal-footer {
+  border-color: #495057;
+}
+
+[data-bs-theme='dark'] #postTitle {
+  color: white;
+  background-color: #212529;
+}
+
+[data-bs-theme='dark'] #categorySelect {
+  color: white;
+  background-color: #212529;
+  margin: 0.5rem auto;
+}
+
+[data-bs-theme='dark'] .form-control,
+[data-bs-theme='dark'] .form-select {
+  color: white;
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+[data-bs-theme='dark'] .form-control::placeholder {
+  color: #adb5bd;
+}
+
+[data-bs-theme='dark'] .btn-secondary {
+  color: white;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+[data-bs-theme='dark'] .btn-primary {
+  color: white;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+[data-bs-theme='dark'] #editor {
+  border-color: #6c757d;
+}
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border-color: var(--quill-border);
+}
+
+.ql-toolbar.ql-snow {
+  background-color: var(--quill-toolbar-bg);
+}
+
+.ql-toolbar.ql-snow .ql-picker,
+.ql-toolbar.ql-snow .ql-picker-label,
+.ql-toolbar.ql-snow button,
+.ql-editor {
+  color: var(--quill-text);
+}
+
+.ql-toolbar.ql-snow .ql-stroke {
+  stroke: var(--quill-text);
+}
+
+.ql-toolbar.ql-snow .ql-fill {
+  fill: var(--quill-text);
+}
+
+.ql-toolbar.ql-snow .ql-picker-options {
+  background-color: var(--quill-bg);
+}
+
+.ql-editor {
+  background-color: var(--quill-bg);
+}
+
 
 .btn-toggle {
   display: inline-flex;
