@@ -23,6 +23,12 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
 }
 
 /*
@@ -139,7 +145,6 @@ h6 {
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* Avatar with margin-right to balance the logo */
 .avatar {
   display: flex;
   gap: 0.625rem;
@@ -403,7 +408,6 @@ main {
   box-shadow: 0 -2px 4px #dac1f6;
   position: relative;
   width: 100%;
-  bottom: 0;
 }
 
 #editor {
