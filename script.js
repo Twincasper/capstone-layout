@@ -1,4 +1,3 @@
-// Import the Cloudinary class.
 import {Cloudinary} from "@cloudinary/url-gen";
 // Import any actions required for transformations.
 import {fill} from "@cloudinary/url-gen/actions/resize";
@@ -6,7 +5,7 @@ import {fill} from "@cloudinary/url-gen/actions/resize";
 // Create a Cloudinary instance and set your cloud name.
 const cld = new Cloudinary({
   cloud: {
-    cloudName: 'demo'
+    cloudName: 'Capstone-layout'
   }
 });
 
@@ -16,14 +15,34 @@ const myImage = cld.image('docs/models');
 // Resize to 250 x 250 pixels using the 'fill' crop mode.
 myImage.resize(fill().width(250).height(250));
 
+if (document.getElementById("upload_widget")) {
+  const myWidget = window.cloudinary.createUploadWidget({
+    cloudName: 'Capstone-layout', 
+    uploadPreset: 'ml_default'
+  }, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  });
+
+  document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+} else {
+  console.error("Cloudinary widget is not loaded correctly.");
+}
+
+
 // Render the image in an 'img' element.
 // const imgElement = document.createElement('img');
 // document.body.appendChild(imgElement);
 // imgElement.src = myImage.toURL();
 
-const quill = new Quill('#editor', {
-  theme: 'snow'
-});
+
+
+// const quill = new Quill('#editor', {
+//   theme: 'snow'
+// });
 
 // This works, just need to have this actually stored somewhere so it sticks to the page on refresh, and test other text editor features such as bolding text, highlighting text, etc.
 
