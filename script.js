@@ -17,9 +17,9 @@ const myImage = cld.image('docs/models');
 myImage.resize(fill().width(250).height(250));
 
 // Render the image in an 'img' element.
-const imgElement = document.createElement('img');
-document.body.appendChild(imgElement);
-imgElement.src = myImage.toURL();
+// const imgElement = document.createElement('img');
+// document.body.appendChild(imgElement);
+// imgElement.src = myImage.toURL();
 
 const quill = new Quill('#editor', {
   theme: 'snow'
