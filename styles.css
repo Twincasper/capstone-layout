@@ -430,3 +430,8 @@ main {
   color: #fff;
 }
 
+#upload_widget {
+  max-width: 30%;
+  margin: 0 auto;
+}
+

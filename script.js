@@ -18,10 +18,38 @@ myImage.resize(fill().width(250).height(250));
 if (document.getElementById("upload_widget")) {
   const myWidget = window.cloudinary.createUploadWidget({
     cloudName: 'Capstone-layout', 
-    uploadPreset: 'ml_default'
+    uploadPreset: 'xohgc3hx'
   }, (error, result) => { 
     if (!error && result && result.event === "success") { 
-      console.log('Done! Here is the image info: ', result.info); 
+      console.log('Done! Here is the image info: ', result.info);
+
+      const uploadedImageUrl = result.info.secure_url;
+
+      console.log('Uploaded Image URL:', uploadedImageUrl);
+
+      // If we had a database, we'd essentially save the URL to that user's profile picture column in the mySql database.
+
+      // Lets append the image to the page as a demonstration.
+      const newCard = document.createElement('div');
+
+      newCard.className = 'col-12 mt-3';
+      newCard.innerHTML = `
+        <div class="card" style="width: 100%; background-color: #f8f9fa; border: 1px solid #ddd;">
+          <div class="d-flex align-items-center">
+            <img class="rounded-circle mr-3" src="${uploadedImageUrl}" alt="Profile Picture" style="width: 50px; height: 50px;">
+            <div class="ml-2">
+              <h5 class="card-title">${result.info.original_filename}</h5>
+              <p class="card-text">${result.info.width}x${result.info.height}</p>
+            </div>
+          </div>
+        </div>`
+
+      document.querySelector('#cards-container').appendChild(newCard);
+
+      // const profilePictureElement = document.getElementById('profilePicture');
+      // if (profilePictureElement) {
+      //   profilePictureElement.src = uploadedImageUrl;
+      // }
     }
   });
 
