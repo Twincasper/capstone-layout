@@ -28,8 +28,8 @@ if (document.getElementById("upload_widget")) {
       console.log('Uploaded Image URL:', uploadedImageUrl);
 
       // If we had a database, we'd essentially save the URL to that user's profile picture column in the mySql database.
+      // In all reality, we may benefit from establishing a clearer upload preset to organize profile pictures into a profile pics folder, and potentially optimize the image to reduce the size as it's just a profile picture. https://cloudinary.com/documentation/upload_presets#managing_upload_presets_programmatically
 
-      // Lets append the image to the page as a demonstration.
       const newCard = document.createElement('div');
 
       newCard.className = 'col-12 mt-3';
